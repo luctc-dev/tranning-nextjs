@@ -1,12 +1,13 @@
 import React from "react";
 import Head from 'next/head'
+import Link from 'next/link'
+import DemoOne from "../components/DemoOne/DemoOne";
+import DemoTwo from "../components/DemoTwo/DemoTwo";
 // js -> ts
 // jsx -> tsx
+import "../styles/index.scss";
+
 const Home: React.FC = () => {
-
-  let firstName: number = 20;
-  let isLoading: boolean;
-
 
   return (
     <div className="container">
@@ -16,8 +17,10 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
+        <DemoOne />
+        <DemoTwo />
         <h1 className="title">
-  Welcome to <a href="https://nextjs.org">Next.js! { firstName }</a>
+  Welcome to <Link href="/user"><a>UserPage</a></Link>
         </h1>
 
         <p className="description">

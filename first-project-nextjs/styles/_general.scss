@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: $color-text;
+  font-size: 1.2rem;
+  // font-family: $font;
+
+  @include breakpoint(sm) {
+    font-size: 1.4rem;
+  }
+}
+
+*:hover,
+*:focus {
+  outline: none;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+button {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+label {
+  border: 0;
+  outline: 0;
+}
+
+// Input and Textarea
+.input,
+.textarea {
+  border: 1px solid $color-border;
+  padding: 0 2rem;
+  box-shadow: none;
+}
+
+.container {
+  padding: 0 20px;
+  width: 100%;
+  margin: 0 auto;
+  .admin & {
+    padding: 30px 20px;
+  }
+  @include breakpoint(md) {
+    width: 768px;
+  }
+
+  @include breakpoint(lg) {
+    width: 950px;
+  }
+
+  @include breakpoint(xl) {
+    width: 1200px;
+  }
+}

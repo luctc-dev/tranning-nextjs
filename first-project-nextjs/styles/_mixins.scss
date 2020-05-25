@@ -1,0 +1,70 @@
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    src: url("/assets/fonts/#{$file-path}.eot");
+    src: url("/assets/fonts/#{$file-path}.eot?#iefix")
+        format("embedded-opentype"),
+      url("/assets/fonts/#{$file-path}.woff") format("woff"),
+      url("/assets/fonts/#{$file-path}.ttf") format("truetype"),
+      url("/assets/fonts/#{$file-path}.svg##{$font-family}")
+        format("svg");
+  }
+}
+
+@mixin arrow($direction, $dimensition, $width, $color) {
+  width: $dimensition;
+  height: $dimensition;
+  @if ($direction == "left") {
+    border-top: $width solid $color;
+    border-left: $width solid $color;
+    transform: rotate(-45deg);
+  }
+  @if ($direction == "right") {
+    border-top: $width solid $color;
+    border-right: $width solid $color;
+    transform: rotate(45deg);
+  }
+  @if ($direction == "top") {
+    border-top: $width solid $color;
+    border-left: $width solid $color;
+    transform: rotate(45deg);
+  }
+  @if ($direction == "bottom") {
+    border-bottom: $width solid $color;
+    border-left: $width solid $color;
+    transform: rotate(-45deg);
+  }
+}
+
+@mixin arrow-bg($direction, $width, $color) {
+  @if ($direction == "left") {
+    width: 0;
+    height: 0;
+    border-left: $width solid $color;
+    border-top: $width solid $color;
+    border-bottom: $width solid transparent;
+  }
+  @if ($direction == "right") {
+    width: 0;
+    height: 0;
+    border-right: $width solid $color;
+    border-top: $width solid $color;
+    border-bottom: $width solid transparent;
+  }
+  @if ($direction == "top") {
+    width: 0;
+    height: 0;
+    border-top: $width solid $color;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+  }
+  @if ($direction == "bottom") {
+    width: 0;
+    height: 0;
+    border-bottom: $width solid $color;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+  }
+}
