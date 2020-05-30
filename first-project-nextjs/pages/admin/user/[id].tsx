@@ -14,7 +14,7 @@ export default function AdminUser() {
 
     return (
         <>
-            <h1>Admin -> User Page {router.query.id}</h1>
+            <h1>Admin -&gt; User Page {router.query.id}</h1>
             <Link href="/login">
                 <button className="active">Go to homepage by a tag</button>
             </Link>
