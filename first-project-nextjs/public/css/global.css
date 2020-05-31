@@ -1,3 +1,9 @@
-body {
+/* body {
     background-color: red;
+} */
+
+.container {
+    margin: 0 auto;
+    width: 1170px;
+    padding: 50px 0;
 }
