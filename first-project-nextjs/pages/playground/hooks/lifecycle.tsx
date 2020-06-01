@@ -1,21 +1,51 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import Button from "../../../components/Button";
+import useConstructor from "../../../custom-hooks/useConstructor";
 
 // Destructring 
 // Chay 1 lan dau tien duy nhat, Truoc khi render
+// Cach 1: Tao bien toan cuc isRun -> Check dieu kien
+
+// Tao Custom Hook -> useConstructor
+//  -> Nhan vao mot function callback
+//  -> function nay chi duoc goi 1 lan duy nhat
+// useConstructor(() => { // hdjshdj })
+
+let isRun = false;
 
 const LifeCycleDemo = () => {
     // Tuong ung voi Constructor
+
+    useConstructor(() => {
+        console.log("constructor cach 4");
+    })
+
     useMemo(() => {
-        console.log("useMemo run <-> constructor");
+        console.log("constructor cach 3");
     }, []);
 
+    const isRunHook = useRef(false);
+    const inputFileEl = useRef(null);
     const [counter, setCounter] = useState(0);
     const [visible, setVisible] = useState(true);
     const [user, setUser] = useState({
         firstName: 'John',
         lastName: 'Smith'
     });
+
+    
+
+    if(isRunHook.current === false) {
+        console.log("constructor cach 2");
+
+        isRunHook.current = true;
+    }
+
+    if(isRun === false) {
+        // Xu li constructor
+        console.log("constructor cach 1");
+        isRun = true;
+    }
 
     // useEffect(() => {
     //     // DidMount & DidUpdate
@@ -64,6 +94,23 @@ const LifeCycleDemo = () => {
             {
                 visible && <Button />
             }
+            <hr />
+
+            <input style={{
+                opacity: 0,
+                visibility: 'hidden',
+                position: "fixed",
+                left: '-1000px'
+            }} type="file"/>
+
+            <button 
+                onClick={() => {
+                    console.log(inputFileEl.current);
+                    // inputFileEl.current.click();
+                    const input = document.querySelector('input[type="file"') as HTMLInputElement;
+                    input.click();
+                }}
+                className="upload">Upload Image</button>
         </div>
     )
 }
