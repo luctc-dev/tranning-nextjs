@@ -7,26 +7,35 @@ export default function () {
     return (
         <div className="container">
             <Modal
-                title="Tieu de cua Modal"
-                isVisible={openModal}
-                isRenderHeader={true}
-                onCancel={() => {
-                    setOpenModal(false);
-                }}
                 onOk={() => {
-                    console.log("handleSubmit");
+                    console.log("Ok");
+                }}
+                onCancel={() => {
+                    console.log("Cancel");
                     setOpenModal(false);
                 }}
-                renderFooter={() => {
-                    return <p>Custom Footer Ne</p>
-                }}
+                title="Form login"
+                isRenderHeader={true}
+                isVisible={openModal}
+                isRenderCloseIcon={true}
+                // renderFooter={() => {
+                //     return (
+                //         <button onClick={() => {
+                //             console.log("Call API login len server");
+                //         }} >Ok</button>
+                //     )
+                // }}
             >
                 <h2>Demo Modal</h2>
+                <form>
+                    <input type="text" />
+                </form>
             </Modal>
 
-            <button onClick={() => {
-                setOpenModal(true);
-            }}>Open Modal</button>
+            <button 
+                onClick={() => {
+                    setOpenModal(true);
+                }}>Open Modal</button>
         </div>
     )
 }
