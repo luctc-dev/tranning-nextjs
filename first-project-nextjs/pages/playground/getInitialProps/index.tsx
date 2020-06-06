@@ -12,7 +12,7 @@ type PropsType = {
     posts: PostType[]
 }
 
-const DemoGetIntialProps: NextPage<PropsType> = ({ posts }) => {
+const DemoGetIntialProps: NextPage = ({ posts }: PropsType) => {
     // const [posts, setPosts] = useState([]);
 
     // useEffect(() => {
