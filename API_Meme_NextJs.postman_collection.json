@@ -1,0 +1,1028 @@
+{
+	"id": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+	"name": "API Meme NextJs",
+	"description": "",
+	"order": [
+		"d460e00e-6f4b-f3d9-0324-0e4d407515e0",
+		"6e8034f5-36f0-00a6-a5da-fca0a9aeab88"
+	],
+	"folders": [
+		{
+			"name": "COMMENT",
+			"description": "",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"order": [
+				"1b2111cc-7bda-4ceb-9935-841eae9a404e",
+				"1fa06066-ac6d-f018-3c26-912807971863"
+			],
+			"owner": "4436264",
+			"folders_order": [],
+			"id": "b1bde455-653e-47c4-4f19-4d3d2600ee04"
+		},
+		{
+			"name": "POST",
+			"description": "",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"order": [
+				"d029767f-3228-51ec-f5c6-149eb33b2f58",
+				"d5760901-ef53-0b1b-963c-a38b83e4727f",
+				"dfb13f69-82f8-f6ca-f835-5a845db2e1b6",
+				"4d452c93-1ba8-fbce-0325-02375f57a537",
+				"412c57f6-0988-f0ab-78c6-f58d03cd7a3a",
+				"76993554-69b8-5837-591a-b99f1ea0b7bc",
+				"8877eca1-28fc-d1ec-3c0d-ca7eca2aa645",
+				"babc2917-aaaa-d396-7335-6927985ac6d9",
+				"44830d3e-1d3f-5196-2bf6-4322966b634d"
+			],
+			"owner": "4436264",
+			"folders_order": [],
+			"id": "4adaa17c-0676-c5d5-f50a-43e896a165cc"
+		},
+		{
+			"name": "USER",
+			"description": "",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"order": [
+				"27eea24a-8d4d-db10-5f9c-3c0460cd4521",
+				"6e41d300-c1e9-6e90-864a-be2a0fe61276",
+				"366aa0b1-0323-f8b1-b739-1d67c622dd65",
+				"350cb14e-6218-5948-cc4c-e41d12b982b6",
+				"37090d80-9d87-e22f-bfd1-744ce869a7df",
+				"fee37946-d445-5b60-e831-1d93c6d540de",
+				"117597cf-cb6d-fab1-7532-d205b8ab7373"
+			],
+			"owner": "4436264",
+			"folders_order": [],
+			"id": "3edbf0c8-9491-7bdc-8422-33a0a82d68d1"
+		}
+	],
+	"folders_order": [
+		"3edbf0c8-9491-7bdc-8422-33a0a82d68d1",
+		"4adaa17c-0676-c5d5-f50a-43e896a165cc",
+		"b1bde455-653e-47c4-4f19-4d3d2600ee04"
+	],
+	"timestamp": 1543692981224,
+	"owner": "4436264",
+	"public": false,
+	"requests": [
+		{
+			"id": "117597cf-cb6d-fab1-7532-d205b8ab7373",
+			"headers": "Authorization: Bearer {{ACCESS_TOKEN}}\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer {{ACCESS_TOKEN}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/post/activeDeactive.php",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Active / Deactive Member",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544430659899,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "3edbf0c8-9491-7bdc-8422-33a0a82d68d1",
+			"isFromCollection": true,
+			"collectionRequestId": "117597cf-cb6d-fab1-7532-d205b8ab7373",
+			"folderId": "3edbf0c8-9491-7bdc-8422-33a0a82d68d1",
+			"rawModeData": "{\n\t\"postid\": 28\n}"
+		},
+		{
+			"id": "1b2111cc-7bda-4ceb-9935-841eae9a404e",
+			"headers": "accept: application/json, text/plain, */*, multipart/form-data\nAuthorization: Bearer {{ACCESS_TOKEN}}\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "accept",
+					"value": "application/json, text/plain, */*, multipart/form-data",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{ACCESS_TOKEN}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/comment/add_new.php",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Post New Comment For News",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544278340505,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"isFromCollection": true,
+			"collectionRequestId": "1b2111cc-7bda-4ceb-9935-841eae9a404e",
+			"folder": "b1bde455-653e-47c4-4f19-4d3d2600ee04",
+			"rawModeData": "{\n\t\"comment\": \"Test bình luận\",\n\t\"postid\": \"28\"\n}"
+		},
+		{
+			"id": "1fa06066-ac6d-f018-3c26-912807971863",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/comment/comments.php?postid=28",
+			"queryParams": [
+				{
+					"key": "postid",
+					"value": "28",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"data": [],
+			"dataMode": "raw",
+			"name": "GET List Comment By Post ID",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544279709775,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "b1bde455-653e-47c4-4f19-4d3d2600ee04",
+			"rawModeData": ""
+		},
+		{
+			"id": "27eea24a-8d4d-db10-5f9c-3c0460cd4521",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/member/login.php",
+			"folder": "3edbf0c8-9491-7bdc-8422-33a0a82d68d1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1544029186058,
+			"name": "Login",
+			"description": "",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "27eea24a-8d4d-db10-5f9c-3c0460cd4521",
+			"rawModeData": "{\n\t\"email\": \"admin@gmail.com\",\n\t\"password\": \"123456\"\n\t\n}"
+		},
+		{
+			"id": "350cb14e-6218-5948-cc4c-e41d12b982b6",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer {{ACCESS_TOKEN}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{ACCESS_TOKEN}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/member/password.php",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Change Password User",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544034286726,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "3edbf0c8-9491-7bdc-8422-33a0a82d68d1",
+			"rawModeData": "{\n\t\"oldPassword\": \"123456\",\n\t\"newPassword\": \"123123\",\n\t\"reNewPassword\": \"123123\"\n}"
+		},
+		{
+			"id": "366aa0b1-0323-f8b1-b739-1d67c622dd65",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer {{ACCESS_TOKEN}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{ACCESS_TOKEN}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/member/member.php?userid=2",
+			"queryParams": [
+				{
+					"key": "userid",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"data": [],
+			"dataMode": "raw",
+			"name": "GET USER BY ID",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544029273682,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"isFromCollection": true,
+			"collectionRequestId": "366aa0b1-0323-f8b1-b739-1d67c622dd65",
+			"folder": "3edbf0c8-9491-7bdc-8422-33a0a82d68d1",
+			"rawModeData": ""
+		},
+		{
+			"id": "37090d80-9d87-e22f-bfd1-744ce869a7df",
+			"headers": "accept: application/json, text/plain, */*, multipart/form-data\nAuthorization: Bearer {{ACCESS_TOKEN}}\n",
+			"headerData": [
+				{
+					"key": "accept",
+					"value": "application/json, text/plain, */*, multipart/form-data",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{ACCESS_TOKEN}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/member/update.php",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"data": [
+				{
+					"key": "avatar",
+					"value": "",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "fullname",
+					"value": "Trần Công Lực",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "Đây là mô tả ngắn của Trần Công Lực",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "gender",
+					"value": "nam",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Update Infor User",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544181116310,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"isFromCollection": true,
+			"collectionRequestId": "37090d80-9d87-e22f-bfd1-744ce869a7df",
+			"folder": "3edbf0c8-9491-7bdc-8422-33a0a82d68d1"
+		},
+		{
+			"id": "412c57f6-0988-f0ab-78c6-f58d03cd7a3a",
+			"headers": "Authorization: Bearer {{ACCESS_TOKEN}}\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer {{ACCESS_TOKEN}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/post/delete.php",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Delete Post By Post ID",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544427048306,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "4adaa17c-0676-c5d5-f50a-43e896a165cc",
+			"rawModeData": "{\n\t\"postid\": 27\n}"
+		},
+		{
+			"id": "44830d3e-1d3f-5196-2bf6-4322966b634d",
+			"headers": "accept: application/json, text/plain, */*, multipart/form-data\nAuthorization: Bearer {{ACCESS_TOKEN}}\n",
+			"headerData": [
+				{
+					"key": "accept",
+					"value": "application/json, text/plain, */*, multipart/form-data",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{ACCESS_TOKEN}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/post/getListByCategory.php?pagesize=3&currPage=1&tagIndex=7",
+			"folder": "4adaa17c-0676-c5d5-f50a-43e896a165cc",
+			"queryParams": [
+				{
+					"key": "pagesize",
+					"value": "3",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "currPage",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "tagIndex",
+					"value": "7",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1566273848892,
+			"name": "Get List News By Category",
+			"description": "",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"responses": []
+		},
+		{
+			"id": "4d452c93-1ba8-fbce-0325-02375f57a537",
+			"headers": "accept: application/json, text/plain, */*, multipart/form-data\nAuthorization: Bearer {{ACCESS_TOKEN}}\n",
+			"headerData": [
+				{
+					"key": "accept",
+					"value": "application/json, text/plain, */*, multipart/form-data",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{ACCESS_TOKEN}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/post/post.php?postid=28",
+			"queryParams": [
+				{
+					"key": "postid",
+					"value": "28",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"data": [
+				{
+					"key": "obj_image",
+					"value": "",
+					"description": "Optional ",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "url_image",
+					"value": "https://i-xem.mkocdn.com/i.xem.sb/data/photo/2018/12/06/023/khong-chiu-khong-chiu-dau-1544054823-650.jpg",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "post_content",
+					"value": "Không chịu, không chịu đâu",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "category",
+					"value": "7,8",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "GET Post Detail By postID",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544237736722,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "4adaa17c-0676-c5d5-f50a-43e896a165cc"
+		},
+		{
+			"id": "6e41d300-c1e9-6e90-864a-be2a0fe61276",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/member/register.php",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Register",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544027687026,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "3edbf0c8-9491-7bdc-8422-33a0a82d68d1",
+			"rawModeData": "{\n\t\"email\": \"test02@gmail.com\",\n\t\"fullname\": \"Test 02\",\n\t\"password\": \"123456\",\n\t\"repassword\": \"123456\"\n}"
+		},
+		{
+			"id": "6e8034f5-36f0-00a6-a5da-fca0a9aeab88",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/member/checktoken.php",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Check Admin permission",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544494097762,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjIiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSJ9.XUJH4iGD9GYlY2Xl8iLAv6qQM8LR5mVwKcOx_OJNpVE\"\n}"
+		},
+		{
+			"id": "76993554-69b8-5837-591a-b99f1ea0b7bc",
+			"headers": "Authorization: Bearer {{ACCESS_TOKEN}}\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer {{ACCESS_TOKEN}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/post/activeDeactive.php",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Active / Deactive Post",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544430659899,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "4adaa17c-0676-c5d5-f50a-43e896a165cc",
+			"rawModeData": "{\n\t\"postid\": 28\n}"
+		},
+		{
+			"id": "8877eca1-28fc-d1ec-3c0d-ca7eca2aa645",
+			"headers": "",
+			"headerData": [],
+			"url": "{{base_url}}/post/search.php?query=th",
+			"queryParams": [
+				{
+					"key": "query",
+					"value": "th",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Search Post (By Full Name or Post Content)",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544436575529,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "4adaa17c-0676-c5d5-f50a-43e896a165cc",
+			"rawModeData": "{\n\t\"postid\": 28\n}"
+		},
+		{
+			"id": "babc2917-aaaa-d396-7335-6927985ac6d9",
+			"headers": "accept: application/json, text/plain, */*, multipart/form-data\nAuthorization: Bearer {{ACCESS_TOKEN}}\n",
+			"headerData": [
+				{
+					"key": "accept",
+					"value": "application/json, text/plain, */*, multipart/form-data",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{ACCESS_TOKEN}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/post/getListPagination.php?pagesize=3&currPage=1",
+			"queryParams": [
+				{
+					"key": "pagesize",
+					"value": "3",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "currPage",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"data": [],
+			"dataMode": "params",
+			"name": "Get List News has Paging",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544446739572,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "4adaa17c-0676-c5d5-f50a-43e896a165cc"
+		},
+		{
+			"id": "d029767f-3228-51ec-f5c6-149eb33b2f58",
+			"headers": "accept: application/json, text/plain, */*, multipart/form-data\nAuthorization: Bearer {{ACCESS_TOKEN}}\n",
+			"headerData": [
+				{
+					"key": "accept",
+					"value": "application/json, text/plain, */*, multipart/form-data",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{ACCESS_TOKEN}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/post/addNew.php",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"data": [
+				{
+					"key": "obj_image",
+					"value": "",
+					"description": "Optional ",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "url_image",
+					"value": "https://i-xem.mkocdn.com/i.xem.sb/data/photo/2018/12/06/023/khong-chiu-khong-chiu-dau-1544054823-650.jpg",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "post_content",
+					"value": "Không chịu, không chịu đâu",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "category",
+					"value": "7,8",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Create New Post (Update Image)",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544181779553,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"isFromCollection": true,
+			"collectionRequestId": "d029767f-3228-51ec-f5c6-149eb33b2f58",
+			"folder": "4adaa17c-0676-c5d5-f50a-43e896a165cc"
+		},
+		{
+			"id": "d460e00e-6f4b-f3d9-0324-0e4d407515e0",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/member/checktoken.php",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Check Json Web Token",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544460651900,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"token\": \"test\"\n}"
+		},
+		{
+			"id": "d5760901-ef53-0b1b-963c-a38b83e4727f",
+			"headers": "accept: application/json, text/plain, */*, multipart/form-data\nAuthorization: Bearer {{ACCESS_TOKEN}}\n",
+			"headerData": [
+				{
+					"key": "accept",
+					"value": "application/json, text/plain, */*, multipart/form-data",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{ACCESS_TOKEN}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/post/edit.php",
+			"folder": "4adaa17c-0676-c5d5-f50a-43e896a165cc",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "obj_image",
+					"value": "",
+					"description": "Optional ",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "url_image",
+					"value": "https://i-xem.mkocdn.com/i.xem.sb/data/photo/2018/12/06/023/khong-chiu-khong-chiu-dau-1544054823-650.jpg",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "post_content",
+					"value": "Không chịu, không chịu đâu",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "category",
+					"value": "7,8",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1566274005166,
+			"name": "Edit Post (Update Image)",
+			"description": "",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"responses": []
+		},
+		{
+			"id": "dfb13f69-82f8-f6ca-f835-5a845db2e1b6",
+			"headers": "accept: application/json, text/plain, */*, multipart/form-data\nAuthorization: Bearer {{ACCESS_TOKEN}}\n",
+			"headerData": [
+				{
+					"key": "accept",
+					"value": "application/json, text/plain, */*, multipart/form-data",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{ACCESS_TOKEN}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/post/getListPostUserID.php?userid=2",
+			"folder": "4adaa17c-0676-c5d5-f50a-43e896a165cc",
+			"queryParams": [
+				{
+					"key": "userid",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "obj_image",
+					"value": "",
+					"description": "Optional ",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "url_image",
+					"value": "https://i-xem.mkocdn.com/i.xem.sb/data/photo/2018/12/06/023/khong-chiu-khong-chiu-dau-1544054823-650.jpg",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "post_content",
+					"value": "Không chịu, không chịu đâu",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "category",
+					"value": "7,8",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1566273797954,
+			"name": "Get Post List By UserID",
+			"description": "",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"responses": []
+		},
+		{
+			"id": "fee37946-d445-5b60-e831-1d93c6d540de",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer {{ACCESS_TOKEN}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{ACCESS_TOKEN}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/member/getListPaging.php?pagesize=4&currPage=1",
+			"folder": "3edbf0c8-9491-7bdc-8422-33a0a82d68d1",
+			"queryParams": [
+				{
+					"key": "pagesize",
+					"value": "4",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "currPage",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1544505639967,
+			"name": "Get List Member has Paging",
+			"description": "",
+			"collectionId": "661a7c1f-0bd8-3a48-e8a8-6124bdcedb39",
+			"responses": [],
+			"rawModeData": ""
+		}
+	]
+}
