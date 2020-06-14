@@ -35,3 +35,6 @@
 - https://github.com/vercel/next-plugins/tree/master/packages/next-sass
 - https://github.com/vercel/next-plugins/tree/master/packages/next-css
 - https://github.com/twopluszero/next-images
+
+## Master Layout
+- Custom App
