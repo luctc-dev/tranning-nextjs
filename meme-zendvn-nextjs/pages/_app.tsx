@@ -4,17 +4,28 @@ import "../assets/css/style.css";
 import App from "next/app";
 import Head from 'next/head'
 
-import { useEffect } from "react";
+import { useMemo } from "react";
 import { AppContext, AppProps } from "next/app";
 
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
 
-    useEffect(() => {
-        console.log("router", router);
-        console.log("pageProps", pageProps);
-    }, [])
+    const hiddenFooter = useMemo(() => {
+        const excluded = [ '/' ];
+        const currentRouter = router.pathname;
+        
+        return excluded.indexOf(currentRouter) !== -1;
+
+    }, [router])
+
+    const hiddenHeader = useMemo(() => {
+        const excluded = [ '/login', '/register' ];
+        const currentRouter = router.pathname;
+
+        return excluded.indexOf(currentRouter) !== -1;
+    }, [router]);
 
     return (
         <div id="root">
@@ -42,8 +53,14 @@ function MyApp({ Component, pageProps, router }: AppProps) {
                 <![endif]*/}
             </Head>
 
-            <Header />
-            <Component {...pageProps} />
+            { !hiddenHeader && <Header /> }
+
+            <main>
+                <Component {...pageProps} />
+            </main>
+            
+            { !hiddenFooter && <Footer /> }
+            
         </div>
     )
 }
