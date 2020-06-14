@@ -13,7 +13,7 @@ import { Footer } from "../components/Footer";
 function MyApp({ Component, pageProps, router }: AppProps) {
 
     const hiddenFooter = useMemo(() => {
-        const excluded = [ '/' ];
+        const excluded = [ '/', '/posts/[postId]' ];
         const currentRouter = router.pathname;
         
         return excluded.indexOf(currentRouter) !== -1;
@@ -41,15 +41,13 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
                 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
 
-                <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.css" />
-	            <link rel="stylesheet" href="fonts/emotion/style.css" />
+                <link rel="stylesheet" href="/fonts/font-awesome/css/font-awesome.css" />
+	            <link rel="stylesheet" href="/fonts/emotion/style.css" />
 
-                {/* JAVA SCRIPT */}
-                {/* require */}
-                {/*  */}
                 {/* HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries */}
                 {/*[if lt IE 9]>
-                
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" />
+	            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js" />
                 <![endif]*/}
             </Head>
 
@@ -60,7 +58,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             </main>
             
             { !hiddenFooter && <Footer /> }
-            
+                   
         </div>
     )
 }
