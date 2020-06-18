@@ -13,11 +13,13 @@ type TypeCurrentuser = {
 }
 
 type TypeInitState = {
+    token?: string;
     currentUser: TypeCurrentuser | null;
 }
 
 const initialState: TypeInitState = {
-    currentUser: null
+    token: '',
+    currentUser: null,
 };
 
 const { useGlobalState } = createGlobalState(initialState);

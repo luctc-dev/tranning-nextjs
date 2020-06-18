@@ -2,14 +2,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/css/style.css";
 import App from "next/app";
 import Head from 'next/head'
-import cookie from "cookie";
 import es6Promise from "es6-promise";
-import { useMemo, useEffect } from "react";
+
+import { useMemo } from "react";
 import { AppContext, AppProps } from "next/app";
 
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { parseJwt } from "../helpers";
+import { getTokenSSRAndCSS } from "../helpers";
 import { useGlobalState } from "../state";
 import userService from "../services/userService";
 
@@ -17,11 +17,13 @@ es6Promise.polyfill();
 
 function MyApp({ Component, pageProps, router }: AppProps) {
     const pathname = router.pathname;
+    const [, setToken] = useGlobalState("token");
     const [currentUser, setCurrentUser] = useGlobalState("currentUser");
     
     useMemo(() => {
         // console.log("Chay mot lan duy nhat phia server side");
         // Chay 1 lan duy nhat khoi tao global state
+        setToken(pageProps.token);
         setCurrentUser(pageProps.userInfo);
     }, []);
 
@@ -80,21 +82,16 @@ MyApp.getInitialProps = async (appContext: AppContext) => {
     let userRes = null;
     const appProps = await App.getInitialProps(appContext);
 
-    if(typeof window === "undefined") {
-        // SSR
-        const cookieStr = appContext.ctx.req.headers.cookie || '';
-        const token = cookie.parse(cookieStr).token;
-        const userToken = parseJwt(token);
-        
-        
-        if(userToken && userToken.id) {
-            userRes = await userService.getUserById(userToken.id);
-        }
-    }
+    const [token, userToken] = getTokenSSRAndCSS(appContext.ctx);
     
+    if(typeof window === "undefined" && userToken?.id && userToken?.email) {
+        userRes = await userService.getUserById(userToken.id);
+    }
+   
     return {
         pageProps: {
             ...appProps.pageProps,
+            token,
             userInfo: userRes && userRes.user
         }
     }

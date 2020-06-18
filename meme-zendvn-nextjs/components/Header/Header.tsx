@@ -1,10 +1,23 @@
 import "./header.scss";
 import Link from "next/link";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 import { useGlobalState } from "../../state";
 
 export default function Header() {
-    const [userInfo] = useGlobalState("currentUser");
+    const router = useRouter();
+    const [, setToken] = useGlobalState("token");
+    const [userInfo, setUserInfo] = useGlobalState("currentUser");
 
+    function handleLogout() {
+        const check = window.confirm('Ban co thuc su muon logout hay khong?');
+        if(check) {
+            Cookies.remove("token");
+            setToken('');
+            setUserInfo(null);
+            router.push('/login');
+        }
+    }
     return (
         <header>
             <div className="ass1-header">
@@ -96,9 +109,11 @@ export default function Header() {
                             </label>
                         </form>
                     </div>
-                    <a href="#" className="ass1-header__btn-upload ass1-btn">
-                        <i className="icon-Upvote" /> Upload
-                    </a>
+                    <Link href="/posts/create">
+                        <a className="ass1-header__btn-upload ass1-btn">
+                            <i className="icon-Upvote" /> Upload
+                        </a>
+                    </Link>
 
                     {
                         userInfo 
@@ -109,7 +124,7 @@ export default function Header() {
                             </span>
                             <span className="email">{userInfo.email}</span>
                             </a>
-                            <div className="logout">Logout</div>
+                            <div onClick={handleLogout} className="logout">Logout</div>
                         </div>
                         : <Link href="/login">
                             <a className="ass1-header__btn-upload ass1-btn">

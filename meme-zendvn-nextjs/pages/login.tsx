@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 // import api from "../services/api";
 import fetch from "isomorphic-fetch";
 import { useGlobalState } from "../state";
-import { useNotAuthenticated } from "../helpers/useAuthentication";
+import { useNotAuthen } from "../helpers/useAuthen";
 // import Cookies from "js-cookie";
 
 interface FormLogin {
@@ -17,7 +17,7 @@ const initFormData = {
 }
 // Chua dang nhap moi vao duoc
 export default function Login(props) {
-    useNotAuthenticated();
+    useNotAuthen();
     const router = useRouter();
     const [formData, setFormData] = useState<FormLogin>(initFormData);
     const [userInfo] = useGlobalState("currentUser");
