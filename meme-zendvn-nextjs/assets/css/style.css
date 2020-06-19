@@ -1582,15 +1582,21 @@ select.form-control:focus {
 .ass1-login__form {
   margin-top: 36px;
 }
-.ass1-login__form form input,
-.ass1-login__form form > *:not(div)  {
+.ass1-login__form form input {
   background-color: #f6f9fb;
   border-radius: 6px;
 }
+
 .ass1-login__form form > input,
-.ass1-login__form form > *:not(div) ,
-.ass1-login__form form .ass1-input-copy {
+.ass1-login__form form .form-group {
   margin-bottom: 30px;
+  position: relative;
+}
+.ass1-login__form form .form-text {
+  position: absolute;
+  text-align: left;
+  padding: 0 15px;
+  width: 100%;
 }
 .ass1-login__send {
   margin-bottom: 30px;

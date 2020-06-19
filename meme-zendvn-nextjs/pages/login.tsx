@@ -1,10 +1,10 @@
+import fetch from "isomorphic-fetch";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/router'
-// import api from "../services/api";
-import fetch from "isomorphic-fetch";
 import { useGlobalState } from "../state";
 import { useNotAuthen } from "../helpers/useAuthen";
-// import Cookies from "js-cookie";
+import { Button } from "../components/Button";
 
 interface FormLogin {
     email: string;
@@ -19,6 +19,7 @@ const initFormData = {
 export default function Login(props) {
     useNotAuthen();
     const router = useRouter();
+    const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState<FormLogin>(initFormData);
     const [userInfo] = useGlobalState("currentUser");
     const errorString = router.query.error;
@@ -74,9 +75,12 @@ export default function Login(props) {
 
     function handleSubmitForm(e) {
         e.preventDefault();
+        if(loading === true) return;
+        
         const formElement = e.target;
         
         // B1: Handle Validation form data
+        setLoading(true);
 
         // B2: Goi ham submit cua Form
         formElement.submit();
@@ -87,6 +91,7 @@ export default function Login(props) {
             <div className="ass1-login__logo">
                 <a href="index.html" className="ass1-logo">ZendVn Meme</a>
             </div>
+        
             <div className="ass1-login__content">
                 <p>Đăng nhập</p>
                 <div className="ass1-login__form">
@@ -103,8 +108,10 @@ export default function Login(props) {
                             name="password"
                             type="password" className="form-control" placeholder="Mật khẩu" required />
                         <div className="ass1-login__send">
-                            <a href="dang-ky.html">Đăng ký một tài khoản</a>
-                            <button type="submit" className="ass1-btn">Đăng nhập</button>
+                            <Link href="/register">
+                                <a>Đăng ký một tài khoản</a>
+                            </Link>
+                            <Button type="submit" className="ass1-btn" isLoading={loading}>Đăng nhập</Button>
                         </div>
                     </form>
                 </div>

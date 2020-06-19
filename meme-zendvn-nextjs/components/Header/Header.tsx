@@ -120,7 +120,7 @@ export default function Header() {
                         ? <div className="wrapper-user">
                             <a className="user-header">
                             <span className="avatar">
-                                <img src={userInfo.profilepicture} alt="avatar" />
+                                <img src={userInfo.profilepicture || "/images/avatar-02.png"} alt="avatar" />
                             </span>
                             <span className="email">{userInfo.email}</span>
                             </a>

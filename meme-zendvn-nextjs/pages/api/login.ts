@@ -19,16 +19,16 @@ export default async (
     })
   }
   const data = req.body;
-  console.log("1. Api/Login Run | data = ", data) // Server
+  // console.log("1. Api/Login Run | data = ", data) // Server
   try {
     const resHeroku = await api.callJson('/member/login.php', { data, method })
     const currentTime = new Date()
     const nextYear = new Date(currentTime.getFullYear() + 1, currentTime.getMonth());
     
-    console.log("2. Response from heroku", resHeroku); // Server
+    // console.log("2. Response from heroku", resHeroku); // Server
     
     if(resHeroku.status === 200) {
-      console.log("3. Gui Location thong qua Header -> Redirect"); // Server
+      // console.log("3. Gui Location thong qua Header -> Redirect"); // Server
       res.statusCode = 302;
       res.setHeader('Location', '/');
       res.setHeader('Content-Type', 'application/json');

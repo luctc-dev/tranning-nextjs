@@ -37,3 +37,31 @@ export const getTokenSSRAndCSS = (ctx?: NextPageContext): [string, UserToken | n
 
     return [token, userToken];
 }
+
+export const validateEmail = (email :string): boolean => {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+export const handleError = (key: string, value: string, password?: string): string => {
+    let error = '';
+    if(value.trim().length === 0) {
+        return "Trường này là bắt buộc.";
+    }
+    switch (key) {
+        case "email":
+            if(!validateEmail(value)) error = 'Email không hợp lệ';
+            else error = '';
+            break;
+        case "password":
+            if(value.length < 6) error = 'Mật khẩu quá ngắn';
+            else error = '';
+            break;
+        case "repassword":
+            if(value !== password) error = "Mật khẩu nhập lại không khớp";
+            else error = '';
+            break;
+    }
+
+    return error;
+}
