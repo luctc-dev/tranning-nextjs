@@ -89,7 +89,9 @@ export default function Login(props) {
     return (
         <div className="ass1-login">
             <div className="ass1-login__logo">
-                <a href="index.html" className="ass1-logo">ZendVn Meme</a>
+                <Link href="/">
+                    <a className="ass1-logo">ZendVn Meme</a>
+                </Link>
             </div>
         
             <div className="ass1-login__content">

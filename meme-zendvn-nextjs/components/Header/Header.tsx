@@ -1,6 +1,7 @@
 import "./header.scss";
 import Link from "next/link";
 import Cookies from "js-cookie";
+import HeaderSearch from "./HeaderSearch";
 import { useRouter } from "next/router";
 import { useGlobalState } from "../../state";
 
@@ -22,9 +23,9 @@ export default function Header() {
         <header>
             <div className="ass1-header">
                 <div className="container">
-                    <a href="index.html" className="ass1-logo">
-                        ZendVn Meme
-            </a>
+                <Link href="/">
+                    <a className="ass1-logo">ZendVn Meme</a>
+                </Link>
                     <nav>
                         <ul className="ass1-header__menu">
                             <li>
@@ -101,14 +102,9 @@ export default function Header() {
                             </li>
                         </ul>
                     </nav>
-                    <div className="ass1-header__search">
-                        <form action="#">
-                            <label>
-                                <input type="search" name="search-text" className="form-control" placeholder="Nhập từ khóa ..." />
-                                <i className="icon-Search" />
-                            </label>
-                        </form>
-                    </div>
+                    
+                    <HeaderSearch />
+
                     <Link href="/posts/create">
                         <a className="ass1-header__btn-upload ass1-btn">
                             <i className="icon-Upvote" /> Upload
