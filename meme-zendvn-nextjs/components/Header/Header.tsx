@@ -41,12 +41,14 @@ export default function Header() {
                     {
                         userInfo 
                         ? <div className="wrapper-user">
-                            <a className="user-header">
-                            <span className="avatar">
-                                <img src={userInfo.profilepicture || "/images/avatar-02.png"} alt="avatar" />
-                            </span>
-                            <span className="email">{userInfo.email}</span>
-                            </a>
+                            <Link href="/users/[userId]" as={`/users/${userInfo.USERID}`}>
+                                <a className="user-header">
+                                <span className="avatar">
+                                    <img src={userInfo.profilepicture || "/images/avatar-02.png"} alt="avatar" />
+                                </span>
+                                <span className="email">{userInfo.email}</span>
+                                </a>
+                            </Link>
                             <div onClick={handleLogout} className="logout">Logout</div>
                         </div>
                         : <Link href="/login">
