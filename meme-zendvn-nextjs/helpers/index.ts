@@ -65,3 +65,15 @@ export const handleError = (key: string, value: string, password?: string): stri
 
     return error;
 }
+
+export const hightlightText = (originStr: string, query: string) => {
+    const indexStart = originStr.toLowerCase().indexOf(query.toLowerCase());
+    
+    if(indexStart === -1) return originStr;
+
+    const beforeStr = originStr.substring(0, indexStart);
+    const middle = originStr.substring(beforeStr.length, query.length);
+    const afterStr = originStr.substring(beforeStr.length + query.length);
+
+    return beforeStr + "<mark>" + middle + "</mark>" + afterStr;
+}

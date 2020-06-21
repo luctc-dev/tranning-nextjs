@@ -19,6 +19,9 @@ const postService = {
         return api.callJson(url, {
             token,
         })
+    },
+    getPostSearch: async ({ query }) => {
+        return api.callJson(`/post/search.php?query=${encodeURI(query)}`);
     }
 }
 

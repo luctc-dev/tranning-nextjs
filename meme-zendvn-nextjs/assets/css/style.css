@@ -52,6 +52,9 @@ img {
   height: auto;
   image-rendering: auto;
 }
+.mark, mark {
+  background-color: yellow;
+}
 a {
   color: #3482e2;
 }
