@@ -6,7 +6,7 @@ import { PostType } from "../../pages";
 import { hightlightText } from "../../helpers";
 
 type PropsType = {
-    post: PostType;
+    post?: PostType;
     customClass?: string;
     isHightlight?: boolean;
     query?: string;
@@ -16,7 +16,7 @@ dayjs.extend(relativeTime)
 
 const PostItem: React.FC<PropsType> = ({ post, customClass, isHightlight, query }) => {
 
-    const timeFormat = dayjs(post.time_added).locale(viLocal).fromNow();
+    const timeFormat = dayjs(post?.time_added).locale(viLocal).fromNow();
     let className = "ass1-section__item";
 
     if(customClass) {
@@ -25,10 +25,10 @@ const PostItem: React.FC<PropsType> = ({ post, customClass, isHightlight, query 
 
     function renderFullname() {
         if(isHightlight && query) {
-            return hightlightText(post.fullname, query);
+            return hightlightText(post?.fullname, query);
         }
 
-        return post.fullname;
+        return post?.fullname;
     }
 
     function renderContent() {
@@ -38,6 +38,8 @@ const PostItem: React.FC<PropsType> = ({ post, customClass, isHightlight, query 
 
         return post.post_content;
     }
+
+    if(!post) return null;
 
     return (
         <div className={className}>

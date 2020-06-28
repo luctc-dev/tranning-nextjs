@@ -1,0 +1,26 @@
+.list-categories {
+    padding-bottom: 20px;
+}
+.list-categories ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+}
+.list-categories ul li {
+    margin: 5px;
+}
+.list-categories ul li a {
+    color: #333;
+    font-size: 14px;
+    display: block;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 3px 10px;
+    transition: all .3s ease;
+}
+.list-categories ul li a:hover {
+    background-color: #333;
+    border-color: #333;
+    color: #fff;
+}

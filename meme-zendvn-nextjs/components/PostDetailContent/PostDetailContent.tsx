@@ -1,8 +1,20 @@
+import "./PostDetailContent.css";
 import { PostCommentForm } from "../PostCommentForm"
 import { PostCommentList } from "../PostCommentList"
 import { PostItem } from "../PostItem";
+import { PostType } from "../../pages";
+import { TypeCategory } from "../../pages/posts/[postId]";
+import Link from "next/link";
 
-const PostDetailContent = () => {
+type PropsType = {
+    postDetailData: PostType;
+    postCategories: TypeCategory[];
+}
+
+const PostDetailContent: React.FC<PropsType> = ({
+    postDetailData,
+    postCategories,
+}) => {
 
     return (
         <div className="ass1-section__list">
@@ -43,7 +55,27 @@ const PostDetailContent = () => {
                 </div>
             </div> */}
 
-            <PostItem />
+            <PostItem post={postDetailData} />
+            
+            <div className="list-categories">
+                <h5><strong>Danh mục: </strong></h5> 
+                <ul>
+                   
+                   {
+                       postCategories.map(obj => {
+                           return (
+                            <li key={obj.TAG_ID}>
+                                <Link href="/categories/[cateId]" as={`/categories/${obj.tag_index}`}>
+                                    <a>{obj.tag_value}</a>
+                                </Link>
+                            </li>
+                           )
+                       })
+                   }
+                    
+                </ul>
+            </div>
+
 
             <PostCommentForm />
 

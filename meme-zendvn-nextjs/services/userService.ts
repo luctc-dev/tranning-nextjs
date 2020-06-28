@@ -22,6 +22,9 @@ type ProfileData = {
 
 const userService = {
     getUserById: async (userId: string) => {
+        if(!userId) {
+            return null;
+        }
         return api.callJson(`/member/member.php?userid=${userId}`);
     },
     register: async (data: RegisterData) => {

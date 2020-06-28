@@ -52,11 +52,28 @@ const postService = {
             token,
         })
     },
+    getPostsByPostId: async({ postid, token }) => {
+        if(!postid || !token) {
+            return {
+                status: 500,
+                error: '',
+            }
+        }
+
+        const url = `/post/post.php?postid=${postid}`;
+        return api.callJson(url, {
+            token
+        })
+    },
     getPostSearch: async ({ query }) => {
         return api.callJson(`/post/search.php?query=${encodeURI(query)}`);
     },
     getCategories: async () => {
         return api.callJson('/categories/index.php');
+    },
+    getCommentByPostId: async (postid) => {
+        const url = `/comment/comments.php?postid=${postid}`;
+        return api.callJson(url);
     }
 }
 
