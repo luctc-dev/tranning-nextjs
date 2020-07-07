@@ -9,18 +9,25 @@ type PropsType = {
     post?: PostType;
     customClass?: string;
     isHightlight?: boolean;
+    isOwner?: boolean;
     query?: string;
 }
 
 dayjs.extend(relativeTime)
 
-const PostItem: React.FC<PropsType> = ({ post, customClass, isHightlight, query }) => {
+const PostItem: React.FC<PropsType> = ({ post, customClass, isHightlight, query, isOwner }) => {
 
     const timeFormat = dayjs(post?.time_added).locale(viLocal).fromNow();
+    let href = '/posts/[postId]';
+    let asPath = `/posts/${post?.PID}`;
     let className = "ass1-section__item";
 
     if(customClass) {
         className = className + " " + customClass;
+    }
+    if(isOwner) {
+        href += "/edit";
+        asPath += "/edit";
     }
 
     function renderFullname() {
@@ -69,7 +76,7 @@ const PostItem: React.FC<PropsType> = ({ post, customClass, isHightlight, query 
                         }}
                     />
                     <div className="ass1-section__image">
-                    <Link href="/posts/[postId]" as={`/posts/${post.PID}`}>
+                    <Link href={href} as={asPath}>
                         <a>
                             <img src={post.url_image} alt={post.url_image} />
                         </a>
@@ -77,7 +84,7 @@ const PostItem: React.FC<PropsType> = ({ post, customClass, isHightlight, query 
                     </div>
                 </div>
                 <div className="ass1-section__footer">
-                    <Link href="/posts/[postId]" as={`/posts/${post.PID}`}>
+                    <Link href={href} as={asPath}>
                         <a className="ass1-section__btn-comment ass1-btn-icon">
                             <i className="icon-Comment_Full" />
                             <span>{post.count || 0}</span>

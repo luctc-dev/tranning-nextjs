@@ -197,6 +197,9 @@ select.form-control:focus {
 .ass1-btn:hover i {
   color: #3482e2;
 }
+.ass1-btn:hover svg circle {
+  stroke: #3482e2;
+}
 .ass1-btn-icon {
   align-items: center;
   display: -moz-inline-box;

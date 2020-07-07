@@ -22,6 +22,7 @@ const PostDetailSidebar: React.FC<PropsType> = ({ loading, category, onChangeDet
             onChangeDetailForm('category', category.filter(id => id !== value));
         }
     }
+
     return (
         <aside className="ass1-aside ass1-aside__edit-post">
             <div>
@@ -39,7 +40,8 @@ const PostDetailSidebar: React.FC<PropsType> = ({ loading, category, onChangeDet
                                 <input 
                                     type="checkbox" 
                                     name="category" 
-                                    value={cate.id} 
+                                    value={cate.id}
+                                    checked={category.indexOf(cate.id.toString()) !== -1}
                                     onChange={handleOnChange}
                                 />
                                 <span />

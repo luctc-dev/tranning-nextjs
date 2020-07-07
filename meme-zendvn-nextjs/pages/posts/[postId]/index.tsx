@@ -1,10 +1,10 @@
-import { HomeSidebar } from "../../components/HomeSidebar";
-import { PostDetailContent } from "../../components/PostDetailContent";
+import { HomeSidebar } from "../../../components/HomeSidebar";
+import { PostDetailContent } from "../../../components/PostDetailContent";
 import { GetServerSideProps, NextPageContext, InferGetServerSidePropsType } from "next";
-import { getTokenSSRAndCSS } from "../../helpers";
-import postService from "../../services/postService";
-import { PostType } from "..";
-import userService from "../../services/userService";
+import { getTokenSSRAndCSS } from "../../../helpers";
+import postService from "../../../services/postService";
+import { PostType } from "../../";
+import userService from "../../../services/userService";
 
 export type TypeCategory = {
     TAG_ID: string,
@@ -78,7 +78,7 @@ export const getServerSideProps: GetServerSideProps<PostDetailDataProps> = async
             profilepicture: userInfoData?.user?.profilepicture || '',
         }
     }
-
+    
     const props = {
         postDetailData,
         postCategories: postDetail?.data?.categories || [],
