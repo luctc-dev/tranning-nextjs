@@ -13,7 +13,7 @@ export type TypeCategory = {
     tag_value: string,
 }
 
-type TypeComment = {
+export type TypeComment = {
     CID: string,
     PID: string,
     USERID: string,
@@ -33,13 +33,14 @@ type PostDetailDataProps = {
 type PostDetailProps = React.FC<InferGetServerSidePropsType<typeof getServerSideProps>>;
 
 
-const PostDetail: PostDetailProps = ({ userPosts, postDetailData, postCategories }) => {
+const PostDetail: PostDetailProps = ({ userPosts, postDetailData, postCategories, comments }) => {
     
     return (
         <div className="container">
             <div className="row">
                 <div className="col-lg-8">
                     <PostDetailContent 
+                        listComments={comments}
                         postDetailData={postDetailData}
                         postCategories={postCategories}
                     />
@@ -56,7 +57,7 @@ export const getServerSideProps: GetServerSideProps<PostDetailDataProps> = async
     const ctx = context as NextPageContext;
     const [token, userToken] = getTokenSSRAndCSS(ctx);
     const userid = userToken?.id;
-    const postid = ctx.query.postId;
+    const postid = ctx.query.postId as string;
   
     const postDetailPos = postService.getPostsByPostId({ postid, token })
     const userPostsPos = postService.getPostsByUserId({ token, userid });
@@ -69,7 +70,7 @@ export const getServerSideProps: GetServerSideProps<PostDetailDataProps> = async
     const userInfoData = await userService.getUserById(postUserId);
 
     let postDetailData = null;
-    console.log(commentsRes);
+    
     if(postDetail?.data?.post) {
         postDetailData = {
             ...postDetail?.data?.post,
