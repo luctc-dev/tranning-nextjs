@@ -5,6 +5,7 @@ import { getTokenSSRAndCSS } from "../../../helpers";
 import postService from "../../../services/postService";
 import { PostType } from "../../";
 import userService from "../../../services/userService";
+import { NextSeo } from 'next-seo';
 
 export type TypeCategory = {
     TAG_ID: string,
@@ -34,12 +35,37 @@ type PostDetailProps = React.FC<InferGetServerSidePropsType<typeof getServerSide
 
 
 const PostDetail: PostDetailProps = ({ userPosts, postDetailData, postCategories, comments }) => {
-    
+
     return (
         <div className="container">
+            <NextSeo
+                title="Bai viet chi tiet"
+                description={postDetailData.post_content}
+                canonical="https://www.canonical.ie/"
+                openGraph={{
+                    title: 'Open Graph Title',
+                    description: 'Open Graph Description',
+                    images: [
+                        {
+                            url: 'https://www.example.ie/og-image-01.jpg',
+                            width: 800,
+                            height: 600,
+                            alt: 'Og Image Alt',
+                        },
+                        {
+                            url: 'https://www.example.ie/og-image-02.jpg',
+                            width: 900,
+                            height: 800,
+                            alt: 'Og Image Alt Second',
+                        },
+                        { url: 'https://www.example.ie/og-image-03.jpg' },
+                        { url: 'https://www.example.ie/og-image-04.jpg' },
+                    ]
+                }}
+            />
             <div className="row">
                 <div className="col-lg-8">
-                    <PostDetailContent 
+                    <PostDetailContent
                         listComments={comments}
                         postDetailData={postDetailData}
                         postCategories={postCategories}
@@ -58,7 +84,7 @@ export const getServerSideProps: GetServerSideProps<PostDetailDataProps> = async
     const [token, userToken] = getTokenSSRAndCSS(ctx);
     const userid = userToken?.id;
     const postid = ctx.query.postId as string;
-  
+
     const postDetailPos = postService.getPostsByPostId({ postid, token })
     const userPostsPos = postService.getPostsByUserId({ token, userid });
     const commentsPos = postService.getCommentByPostId(postid);
@@ -66,30 +92,30 @@ export const getServerSideProps: GetServerSideProps<PostDetailDataProps> = async
     const [postDetail, userPostsRes, commentsRes] = await Promise.all([postDetailPos, userPostsPos, commentsPos]);
 
     const postUserId = postDetail?.data?.post?.USERID || '';
-    
+
     const userInfoData = await userService.getUserById(postUserId);
 
     let postDetailData = null;
-    
-    if(postDetail?.data?.post) {
+
+    if (postDetail?.data?.post) {
         postDetailData = {
             ...postDetail?.data?.post,
             fullname: userInfoData?.user?.fullname || '',
             profilepicture: userInfoData?.user?.profilepicture || '',
         }
     }
-    
+
     const props = {
         postDetailData,
         postCategories: postDetail?.data?.categories || [],
         userPosts: userPostsRes?.posts || [],
         comments: commentsRes?.comments || [],
     }
-  
+
     return {
-      props, 
+        props,
     }
-  }
-  
+}
+
 
 export default PostDetail
